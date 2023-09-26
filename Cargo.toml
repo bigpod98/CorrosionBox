@@ -1,0 +1,7 @@
+[workspace]
+members = [
+	"corrosion_box_cli",
+        "corrosion_box_lib",
+        "corrosion_box_init",
+]
+resolver = "2"

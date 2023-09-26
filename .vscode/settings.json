@@ -1,0 +1,12 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml",
+        "./corrosion_box_lib/Cargo.toml"
+    ]
+}

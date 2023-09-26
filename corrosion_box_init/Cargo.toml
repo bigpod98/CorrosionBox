@@ -1,0 +1,7 @@
+[package]
+name = "corrosion_box_init"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+corrosion_box_lib = { path = "../corrosion_box_lib" }
