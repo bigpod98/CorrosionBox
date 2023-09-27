@@ -1,36 +1,36 @@
-pub fn check_feature(flag_home: String, flag_custom_home: String, flag_custom_home_path: String) -> String
+pub fn check_feature(flag_home: String, flag_custom_home: String, flag_custom_home_path: String, ) -> String
 {
     if  flag_custom_home == "true"
     {
         if flag_custom_home_path .len() > 0
         {
-            return "Custom_home".to_string();
+            return custom_home_mount(flag_custom_home_path);
         }
         else {
             if flag_home == "true" {
-                return "User_home".to_string();
+                return home_mount();
             }
             else {
-                return "no_home".to_string();
+                return "".to_string();
             }
         }
     }
     else {
         if flag_home == "true" {
-            return "User_home".to_string();
+            return home_mount();
         }
         else {
-            return "no_home".to_string();
+            return "".to_string();
         }
     }  
 }
 
 pub fn home_mount() -> String
 {
-    let userhomedir = "";
+    let userhomedir = std::env::var("$HOME").unwrap().to_string();
 
     let mut selinux = "";
-    let selinux_check=true;
+    let selinux_check=crate::checks::selinux_check();
     if selinux_check == true
     {
         selinux = ":Z";
@@ -39,10 +39,12 @@ pub fn home_mount() -> String
     return format!("-v {}:{}{}", userhomedir, userhomedir, selinux).to_string();
 }
 
-pub fn custom_home_mount(path: String, username: String) -> String
+pub fn custom_home_mount(path: String) -> String
 {
+    let username = std::env::var("$HOME").unwrap().to_string();
+
     let mut selinux = "";
-    let selinux_check=true;
+    let selinux_check= crate::checks::selinux_check();
     if selinux_check == true
     {
         selinux = ":Z";
