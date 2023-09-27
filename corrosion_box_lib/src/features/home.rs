@@ -29,12 +29,12 @@ pub fn home_mount() -> String
 {
     let userhomedir = std::env::var("$HOME").unwrap().to_string();
 
-    let mut selinux = "";
-    let selinux_check=crate::checks::selinux_check();
-    if selinux_check == true
-    {
-        selinux = ":Z";
-    }
+    // let mut selinux = "";
+    // let selinux_check=crate::checks::selinux_check();
+    // if selinux_check == true
+    // {
+    //     selinux = ":Z";
+    // }
 
     return format!("-v {}:{}{} -e HOME=\"{}\"", userhomedir, userhomedir, userhomedir, selinux).to_string();
 }
@@ -43,12 +43,12 @@ pub fn custom_home_mount(path: String) -> String
 {
     let username = std::env::var("$HOME").unwrap().to_string();
 
-    let mut selinux = "";
-    let selinux_check= crate::checks::selinux_check();
-    if selinux_check == true
-    {
-        selinux = ":Z";
-    }
+    // let mut selinux = "";
+    // let selinux_check= crate::checks::selinux_check();
+    // if selinux_check == true
+    // {
+    //     selinux = ":Z";
+    // }
 
     return format!("-v {}:/home/{}{} -e HOME=\"/home/{}\"", path, username, username, selinux).to_string();
 }
