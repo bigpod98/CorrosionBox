@@ -7,3 +7,4 @@ pub mod shm;
 pub mod mounts;
 pub mod box_init;
 pub mod user;
+pub mod networking;
