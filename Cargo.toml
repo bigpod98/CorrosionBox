@@ -3,5 +3,6 @@ members = [
 	"corrosion_box_cli",
         "corrosion_box_lib",
         "corrosion_box_init",
+        "corrosion_try_things",
 ]
 resolver = "2"
