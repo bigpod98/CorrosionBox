@@ -44,7 +44,7 @@ pub fn systemmounts(flag_disable_system_mounts: String) -> String
         let mut out=String::new();
         for line in lines {
             if line != "shm" {
-                out = format!("{} -v {}:{}",out , line, line)
+                out = format!("{} -v {}:{}:rslave",out , line, line)
             }
         }
 
