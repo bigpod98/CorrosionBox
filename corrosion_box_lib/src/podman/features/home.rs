@@ -36,7 +36,7 @@ pub fn home_mount() -> String
     //     selinux = ":Z";
     // }
 
-    return format!("-v {}:{}{} -e HOME=\"{}\"", userhomedir, userhomedir, userhomedir, selinux).to_string();
+    return format!("-v {}:{} -e HOME=\"{}\"", userhomedir, userhomedir, userhomedir).to_string();
 }
 
 pub fn custom_home_mount(path: String) -> String
@@ -50,5 +50,5 @@ pub fn custom_home_mount(path: String) -> String
     //     selinux = ":Z";
     // }
 
-    return format!("-v {}:/home/{}{} -e HOME=\"/home/{}\"", path, username, username, selinux).to_string();
+    return format!("-v {}:/home/{} -e HOME=\"/home/{}\"", path, username, username).to_string();
 }
