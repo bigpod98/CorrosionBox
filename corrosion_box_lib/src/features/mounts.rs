@@ -48,7 +48,7 @@ pub fn systemmounts(flag_disable_system_mounts: String) -> String
             }
         }
 
-        return format!("-v /tmp:/tmp:rslave -v /sys:/sys:rslave {}", out).to_string();
+        return format!("-v /tmp:/tmp:rslave -v /sys:/sys:rslave -v /run:/run {}", out).to_string();
     }
     return "".to_string();
 }
