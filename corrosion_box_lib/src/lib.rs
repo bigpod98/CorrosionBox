@@ -1,4 +1,5 @@
 pub mod podman;
+pub mod incus;
 pub mod checks;
 pub mod selinux;
 
